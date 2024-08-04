@@ -1,22 +1,13 @@
-"search_placeholder" = "搜索...";
-"clear_tooltip" = "清除未固定的项目。\n按住 ⇧ 以全部清除。";
 "clear_all_tooltip" = "清除全部项目。";
 "about_tooltip" = "查看更多应用信息";
 "quit_tooltip" = "退出应用";
-"clear" = "清除";
 "clear_all" = "全部清除";
 "about" = "关于";
 "quit" = "退出";
 "preferences" = "偏好设置";
-"preferences_advanced" = "高级";
-"preferences_appearance" = "外观";
 "preferences_ignore" = "忽略";
 "preferences_general" = "通用";
-"preferences_pins" = "固定";
 "preferences_storage" = "贮存";
-"copy_modifiers_config" = "• 按住 %@ 选择项目以复制";
-"paste_modifiers_config" = "• 按住 %@ 选择项目以复制并粘贴";
-"format_modifiers_config" = "• 按住 %@ 选择项目以复制并匹配格式粘贴";
 "accessibility_alert_message" = "“CleanClip“想要使用“辅助功能”控制此计算机。";
 "accessibility_alert_comment" = "在“系统偏好设置”中的“安全性和隐私”设置中授予此应用程序权限。\n\n单击 ”+” 按钮，选择 ”CleanClip” 并打开旁边的复选框。";
 "accessibility_alert_deny" = "拒绝";
@@ -25,9 +16,6 @@
 "clear_alert_comment" = "无法撤消此操作。";
 "clear_alert_cancel" = "取消";
 "clear_alert_confirm" = "清除";
-"key_used_error" = "键位已被使用。";
-"active_screen" = "活动屏幕";
-"screen" = "屏幕";
 
 // MARK: - CleanClip
 "license_intro" = "重新重视剪贴板内容的价值！";
@@ -69,10 +57,6 @@
 "next_page" = "下一页";
 "prev_page" = "上一页";
 "preview" = "预览";
-"next_page_or_expand" = "展开/下一页";
-"help" = "操作提示";
-"expand" = "展开更多";
-"search" = "搜索";
 "search_number" = "数字搜索";
 "switch_item" = "切换选项";
 
@@ -89,6 +73,7 @@
 "open_copystack" = "打开粘贴队列";
 "open_copystack_tooltip" = "打开粘贴队列";
 "stack_empty" = "队列为空";
+
 "clear_stack" = "清空";
 
 "plain_mode" = "纯文本模式";
@@ -123,7 +108,7 @@
 "tip_format_brush" = "格式刷";
 "tip_show_tutorial" = "显示快捷菜单操作帮助";
 
-// 输出格式
+// Output Format
 "preview" = "预览";
 "remove_extra_spaces" = "**去除多余**空格";
 "strip_all_whitespaces" = "**去除所有**空格";
@@ -133,6 +118,7 @@
 "make_upper_case" = "全部**大写**";
 "make_lower_case" = "全部**小写**";
 
+// Paste stack options
 "post_action_title" = "粘贴后按下";
 "none" = "无";
 
@@ -143,11 +129,11 @@
 "migrate_start" = "开始使用";
 "migrate_upgraded" = "升级完成";
 
-// 编辑
+// edit
 "edit" = "编辑";
 "edit_text" = "编辑文字";
 
-// 新手教学
+// 新手引导
 "tutorial_title" = "试试这些强大的功能";
 // 快捷菜单
 "quick_menu" = "快捷菜单";
@@ -163,7 +149,7 @@
 "call_pinboards" = "固定、使用常用内容";
 "call_pinboards_desc" = "连按两次快捷菜单快捷键 ⌘；查看已固定的常用内容，无需记忆新的组合键。\n固定常用项目使它们永远留在列表顶部，防止被新项目淹没，随时使用。";
 
-// Paste Stack
+// 粘贴队列
 "paste_stack" = "粘贴队列";
 "paste_stack_intro" = "粘贴队列用法简介";
 "paste_stack_intro_desc" = "⌘' 打开粘贴队列后，复制的内容会自动进入队列，⌘V 会按序列依次粘贴队列里的下一项。\n1. 点击底部的「上下箭头按钮」可反转列表\n2.「拖拽项目」可调换顺序\n3.「点击 #」 切换到指定项目\n4.「粘贴后按下」选项会在粘贴后自动按下对应按键";
@@ -174,7 +160,7 @@
 "paste_stack_collect" = "收集信息";
 "paste_stack_collect_desc" = "在多个页面收集内容后，到目标页面统一粘贴，优化流程，节约时间。";
 
-// Status Bar
+// 菜单栏
 "status_bar" = "菜单栏";
 "status_bar_functions" = "菜单栏功能";
 "status_bar_functions_desc" = "1. 显示最近一条复制记录\n2. 按住 ⌥ 点击图标，可以暂停、恢复监听剪贴板\n3. 快速屏蔽来自当前应用的复制内容\n4. 序列号管理\5. 快速入门教程";
@@ -193,7 +179,7 @@
 "pinned_window" = "打开主窗口";
 "pinned_window_tooltip" = "主窗口是方便管理、组织剪贴板内容的常驻窗口";
 
-// MARK: 标题
+// MARK: Title
 "pin_apps_all" = "全部应用";
 "pin_apps_all_tooltip" = "显示全部应用内容";
 "pin_apps_frontmost" = "跟随前台应用";
@@ -212,26 +198,26 @@
 "pin_bottom_all_as_default_filter" = "默认展示：";
 
 "pin_context_delete_lists" = "删除";
+"pin_context_remove_from_lists" = "从列表中移除";
 "pin_context_manage_lists" = "查看信息";
 "pin_context_add_new_lists" = "新建列表";
 "pin_context_add_to_lists" = "添加到列表";
 "pin_context_alias" = "设置别名";
 "pin_context_copy_to_clipboard" = "复制到剪贴板";
 "pin_context_delete" = "删除";
-"pin_context_remove_from_lists" = "从列表中移除";
 "pin_context_merge_paste" = "合并粘贴";
 "pin_context_paste" = "粘贴";
 "pin_context_paste_as_plain" = "粘贴为纯文本";
 "pin_context_preview" = "预览";
 "pin_context_preview_when_hover" = "开启鼠标悬停预览";
 
-// MARK: 内容列表
+// MARK: Content List
 "pin_contents_appname_tooltip" = "应用名称";
-// 空页面
+// Empty Page
 "pin_contents_list_empty" = "列表为空";
 "pin_contents_list_empty_desc" = "复制一些内容试试";
 
-// MARK: 添加列表窗口
+// MARK: Add List Window
 "pin_lists_title" = "编辑列表";
 "pin_lists_name" = "名称:";
 "pin_lists_color" = "颜色:";
@@ -248,7 +234,7 @@
 
 "pin_lists_unknown" = "未知";
 
-// 过滤器
+// Filters
 "pin_lists_filter_belongs" = "属于";
 "pin_lists_filter_not_belongs" = "不属于";
 "pin_lists_filter_lists_empty" = "列表为空";
@@ -328,7 +314,7 @@
 // Pro
 "pro_unpaid_version" = "今日剩余 %@ 次";
 
-// quickmenu 设置项
+// quickmenu settings
 "quickmenu_option_show_shortcut" = "总是展示快捷键提示";
 "quickmenu_option_show_when_hover" = "鼠标悬停自动显示";
 "quickmenu_option" = "工具栏选项";
@@ -340,10 +326,10 @@
 "quickmenu_general_default_action_auto_paste" = "自动粘贴";
 "quickmenu_general_default_action_copy" = "仅复制";
 "quickmenu_tip_prefences" = "偏好设置";
-// 工具列表
+// Tool List
 "quickmenu_option_switch" = "切换项目 ⌘[0-9]";
 "quickmenu_option_search" = "搜索 ⌘F";
-"quickmenu_option_switchTab" = "切换列表 ⌘;";
+"quickmenu_option_switchTab" = "切换列表 ⌘";
 "quickmenu_option_copy" = "复制到剪贴板 ⌘C";
 "quickmenu_option_star" = "收藏 ⌘S";
 "quickmenu_option_delete" = "删除 ⌘D";
@@ -357,7 +343,22 @@
 "quickmenu_preview_ocr_header" = "图片中的文字：";
 
 // MARK: - settings
-// General
+// MARK: settings name
+"settings_general" = "一般的";
+"settings_shortcuts" = "快捷方式";
+"settings_paste_format" = "粘贴格式";
+"settings_lists" = "列表";
+"settings_quick_menu" = "快捷菜单";
+"settings_main_window" = "主窗口";
+"settings_paste_stack" = "粘贴堆栈";
+"settings_ignore" = "忽略";
+"settings_ocr" = "光学字符识别";
+"settings_about" = "关于";
+"settings_appupdates" = "可用软件更新";
+"settings_license" = "执照";
+"upgrade_to_recommand_os_version" = "推荐使用 macOS 13.0+ 以获得最佳体验!";
+
+// MARK: General
 "check_update" = "检查更新";
 "check_update_desc" = "自动检查更新";
 "sounds" = "声效";
@@ -371,27 +372,26 @@
 
 "show_recently_desc" = "在菜单栏图标前显示最近的复制内容";
 
-// Quick Menu
+// MARK: Quick Menu
 "quick_menu_title" = "快捷窗口:";
-"quick_menu_shortcut_desc" = "打开快捷窗口的全局快捷键。
-默认: 「⌘ + ;」";
+"quick_menu_shortcut_desc" = "打开快捷窗口的全局快捷键。";
 
 "popup_at" = "弹窗位置:";
 "window_center" = "窗口中心";
 "mouse_cursor" = "鼠标光标";
 "text_cursor" = "文字光标";
 "screen_center" = "屏幕中心";
+"popup_at_fallback" = "由于系统限制，在一些应用中无法正确定位输入位置，请为之选择一项备选位置";
 
-// Main Window
+// MARK: Main Window
 "main_window_title" = "主窗口:";
 "main_window_shortcut_desc" = "打开主窗口的全局快捷键。";
 "main_window_auto_collapse" = "自动收起";
 "main_window_full_mode" = "完整高度";
 
-// Paste Stack
+// MARK: Paste Stack
 "paste_stack_title" = "粘贴队列:";
-"paste_stack_desc" = "打开粘贴队列的全局快捷键。
-默认: 「⌘ + '」";
+"paste_stack_desc" = "打开粘贴队列的全局快捷键。";
 
 "split_copy" = "拆分复制:";
 "split_copy_desc" = "拆分复制会把多行文本拆分成多项分别复制";
@@ -399,19 +399,54 @@
 "paste_stack_order" = "默认顺序";
 "paste_stack_order_stack" = "堆栈顺序";
 "paste_stack_order_queue" = "队列顺序";
+"paste_stack_order_shuffle" = "洗牌顺序";
 
-// MARK: - Storage
+// MARK: Storage
 "number_of_copies" = "保留历史记录条数";
 
-// MARK: - Ignore
+// MARK: Ignore
+"ignore_apps" = "忽略的应用程序";
 "app" = "Application";
 "ignore_or_not" = "Ignore";
 "bundle_id" = "Bundle Id";
 "select_all" = "Select All";
 "unselect_all" = "Unselect All";
 
-// MARK: - About
+// MARK: About
 "acknowledgements" = "Acknowledgements";
 "visit_website" = "访问网站";
 "contact_us" = "联系我们";
 "copyright" = "©️版权所有";
+
+// MARK: settings lists
+"lists_desc" = "通过收集列表、智能列表更好地组织你的内容";
+"lists_name" = "名字";
+"is_smartlist" = "智能列表";
+"count" = "数量";
+"desc" = "智能列表描述";
+
+// MARK: settings shortcuts
+"name" = "功能";
+"shortcuts" = "快捷键";
+"shortcuts_quick_menu" = "开关快捷菜单";
+"shortcuts_main_window" = "开关主窗口";
+"shortcuts_paste_stack" = "开关粘贴队列";
+"shortcuts_split_copy" = "拆分复制";
+"shortcuts_split_copy_desc" = "把选中的文本自动按行拆分复制成多项";
+
+// MARK: settings output formats
+"output_format_desc" = "预设输出格式，文字将格式化成指定的格式粘贴";
+
+// MARK: settings ocr
+"ocr_desc" = "自动对复制的图片进行 OCR，以后可以使用文字搜索图片";
+
+// MARK: settings appUpdates
+"avaiable_updates" = "可用更新";
+"beta_updates" = "测试版更新";
+"install_now" = "重启并更新";
+"updates_more_info" = "更多信息...";
+
+// MARK: settings license
+"upgrade_to_pro" = "升级到 Pro";
+"free_amount_today" = "今日免费额度使用";
+"upgrade_to_pro_for_unlimited_access" = "升级到 Pro 获取全部功能的不限次使用!";
