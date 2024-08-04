@@ -77,8 +77,10 @@ def main():
     parser = argparse.ArgumentParser(description='Process some arguments.')
 
     # 添加两个命令行参数
-    parser.add_argument('--prev', type=str, help='The previous value')
-    parser.add_argument('--target', type=str, help='The target value')
+#    parser.add_argument('--prev', type=str, help='The previous value')
+#    parser.add_argument('--target', type=str, help='The target value')
+    parser.add_argument('--prev', nargs='?', const='', help='The previous value')
+    parser.add_argument('--target', nargs='?', const='', help='The target value')
 
     # 解析命令行参数
     args = parser.parse_args()
