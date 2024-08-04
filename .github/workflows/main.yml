@@ -56,18 +56,41 @@ jobs:
         python translation.py --prev=${{ steps.get_params.outputs.PARAM1 }} --target=${{ steps.get_params.outputs.PARAM2 }}
         # 获取当前分支名称
         CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+        
+        # 创建新的分支名称
+        NEW_BRANCH="update-translations-$(date +%s)"
+        
+        # 创建新分支并切换到该分支
+        git checkout -b $NEW_BRANCH
+        
+        # 添加所有更改
+        git add .
+        
+        # 提交更改
+        git commit -m "Update translations"
+        
+        # 推送新分支到远程仓库
+        git push origin $NEW_BRANCH
+        
+        # 输出分支信息，供后续步骤使用
         echo "CURRENT_BRANCH=${CURRENT_BRANCH}" >> $GITHUB_OUTPUT
-      id: run_script
-
+        echo "NEW_BRANCH=${NEW_BRANCH}" >> $GITHUB_OUTPUT
+      id: git_ops
+      
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
+      uses: actions/github-script@v6
       with:
-        commit-message: Update translations
-        title: Update translations
-        body: |
-          This PR updates translations:
-          - From: ${{ steps.get_params.outputs.PARAM1 }}
-          - To: ${{ steps.get_params.outputs.PARAM2 }}
-        branch: update-translations-${{ github.sha }}
-        base: ${{ steps.run_script.outputs.CURRENT_BRANCH }}  # 使用脚本切换后的分支作为基础分支
-        delete-branch: true
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { CURRENT_BRANCH, NEW_BRANCH } = process.env
+          await github.rest.pulls.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: 'Update translations',
+            body: 'This PR updates translations.',
+            head: NEW_BRANCH,
+            base: CURRENT_BRANCH
+          })
+      env:
+        CURRENT_BRANCH: ${{ steps.git_ops.outputs.CURRENT_BRANCH }}
+        NEW_BRANCH: ${{ steps.git_ops.outputs.NEW_BRANCH }}
