@@ -329,7 +329,7 @@
 // Tool List
 "quickmenu_option_switch" = "アイテム切り替え ⌘[0-9]";
 "quickmenu_option_search" = "検索 ⌘F";
-"quickmenu_option_switchTab" = "リストの切り替え ⌘;";
+"quickmenu_option_switchTab" = "リストの切り替え ⌘";
 "quickmenu_option_copy" = "クリップボードにコピー ⌘C";
 "quickmenu_option_star" = "ブックマーク ⌘S";
 "quickmenu_option_delete" = "削除 ⌘D";
@@ -343,12 +343,28 @@
 "quickmenu_preview_ocr_header" = "画像内のテキスト:";
 
 // MARK: - settings
-// General
+// MARK: settings name
+"settings_general" = "一般的な";
+"settings_shortcuts" = "ショートカット";
+"settings_paste_format" = "フォーマットの貼り付け";
+"settings_lists" = "リスト";
+"settings_quick_menu" = "クイックメニュー";
+"settings_main_window" = "メインウィンドウ";
+"settings_paste_stack" = "スタックの貼り付け";
+"settings_ignore" = "無視する";
+"settings_ocr" = "OCR";
+"settings_about" = "について";
+"settings_appupdates" = "ソフトウェアアップデートが利用可能";
+"settings_license" = "ライセンス";
+"upgrade_to_recommand_os_version" = "最高のエクスペリエンスを実現するには、macOS 13.0 以降をお勧めします。";
+
+// MARK: General
 "check_update" = "今すぐ確認";
 "check_update_desc" = "アップデートを自動で確認する";
 "sounds" = "効果音";
 "sounds_desc" = "履歴に新しいアイテムが追加され、前のアイテムが選択されたときに、効果音を再生する。";
 "launch_at_login" = "ログイン時に起動";
+"shortcuts" = "ショートカットキー";
 
 // Menu Icon
 "show_menu_icon" = "メニューアイコンを表示";
@@ -356,34 +372,81 @@
 
 "show_recently_desc" = "メニューアイコンの隣に最近のコピーを表示";
 
-// Quick Menu
+// MARK: Quick Menu
 "quick_menu_title" = "クイックメニュー:";
-"quick_menu_shortcut_desc" = "アプリケーションを開くためのグローバル ショートカット キー。
-デフォルト: 「⌘ + ;」";
+"quick_menu_shortcut_desc" = "アプリケーションを開くためのグローバル ショートカット キー。";
 
 "popup_at" = "ポップアップ表示:";
 "window_center" = "ウィンドウの中央";
 "mouse_cursor" = "マウスカーソル";
 "text_cursor" = "テキストカーソル";
 "screen_center" = "画面の中央";
+"popup_at_fallback" = "システムの制限により、一部のアプリケーションでは入力位置を正しく配置できません。別の位置を選択してください。";
 
-// Main Window
+// MARK: Main Window
 "main_window_title" = "メインウインドウ";
 "main_window_shortcut_desc" = "メインウィンドウを開くためのグローバルショートカットキー。";
+"main_window_auto_collapse" = "自動折りたたみ";
+"main_window_full_mode" = "フルハイト";
 
-// Paste Stack
+// MARK: Paste Stack
 "paste_stack_title" = "ペーストスタック:";
 "paste_stack_desc" = "ペーストスタックを開くためのグローバルショートカットキー。デフォルト：「⌘+'」";
 
 "split_copy" = "分割コピー：";
 "split_copy_desc" = "分割コピーでは、複数行のテキストを別々のアイテムに分割してコピーします。";
 
-// MARK: - Storage
+"paste_stack_order" = "デフォルトの順序:";
+"paste_stack_order_stack" = "スタック順序";
+"paste_stack_order_queue" = "キューの順序";
+"paste_stack_order_shuffle" = "シャッフル順序";
+
+// MARK: Storage
 "number_of_copies" = "保持する履歴項目数";
 
-// MARK: - Ignore
+// MARK: Ignore
+"ignore_apps" = "無視されたアプリケーション";
 "app" = "Application";
 "ignore_or_not" = "Ignore";
 "bundle_id" = "Bundle Id";
 "select_all" = "Select All";
 "unselect_all" = "Unselect All";
+
+// MARK: About
+"acknowledgements" = "謝辞";
+"visit_website" = "ウェブサイトを訪問";
+"contact_us" = "お問い合わせ";
+"copyright" = "©️著作権";
+
+// MARK: settings lists
+"lists_desc" = "コレクションリストやスマートリストを使用してコンテンツをより適切に整理します";
+"lists_name" = "名前";
+"is_smartlist" = "スマートリスト";
+"count" = "数量";
+"desc" = "スマートリストの説明";
+
+// MARK: settings shortcuts
+"name" = "関数";
+"shortcuts" = "ショートカットキー";
+"shortcuts_quick_menu" = "ショートカットメニューを切り替える";
+"shortcuts_main_window" = "メインウィンドウを切り替える";
+"shortcuts_paste_stack" = "ペーストキューの切り替え";
+"shortcuts_split_copy" = "分割コピー";
+"shortcuts_split_copy_desc" = "選択したテキストを行ごとに自動的に分割し、複数のアイテムにコピーします";
+
+// MARK: settings output formats
+"output_format_desc" = "デフォルトの出力形式。テキストは指定された形式にフォーマットされて貼り付けられます。";
+
+// MARK: settings ocr
+"ocr_desc" = "コピーした画像に対して自動的に OCR を実行し、後でテキストを使用して画像を検索できます";
+
+// MARK: settings appUpdates
+"avaiable_updates" = "利用可能なアップデート";
+"beta_updates" = "ベータ版のアップデート";
+"install_now" = "再起動とアップデート";
+"updates_more_info" = "より詳しい情報...";
+
+// MARK: settings license
+"upgrade_to_pro" = "プロ仕様にアップグレードする";
+"free_amount_today" = "今すぐ無料割り当てを使用してください";
+"upgrade_to_pro_for_unlimited_access" = "Pro にアップグレードすると、すべての機能に無制限にアクセスできます。";
