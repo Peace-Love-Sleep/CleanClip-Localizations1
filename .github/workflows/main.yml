@@ -112,10 +112,10 @@ jobs:
         format: 'markdown'
         message: |
           🚀 Translation workflow completed successfully!
-          **Repository**: ${{ github.repository }}
-          **Branch**: ${{ github.ref }}
-          **Commit**: ${{ github.sha }}
-          **Pull Request**: ${{ env.PR_URL }}
+          *Repository*: ${{ github.repository }}
+          *Branch*: ${{ github.ref }}
+          *Commit*: ${{ github.sha }}
+          *Pull Request*: ${{ env.PR_URL }} - ${{ github.event.head_commit.message }}
       env:
         PR_URL: ${{ steps.git_pr.outputs.PR_URL }}
 
@@ -128,7 +128,7 @@ jobs:
         format: 'markdown'
         message: |
           ❌ Translation workflow failed!
-          **Repository**: ${{ github.repository }}
-          **Branch**: ${{ github.ref }}
-          **Commit**: ${{ github.sha }}
+          *Repository*: ${{ github.repository }}
+          *Branch*: ${{ github.ref }}
+          *Commit*: ${{ github.sha }}
           Please check the logs for more information.
