@@ -96,8 +96,8 @@ jobs:
             head: NEW_BRANCH,
             base: 'main'
           })
-          echo pullRequest
-          echo "PR_URL=${pullRequest.data.html_url}" >> $GITHUB_OUTPUT
+          console.log(pullRequest)
+          console.log(`::set-output name=PR_URL::${pullRequest.data.html_url}`)
       env:
         CURRENT_BRANCH: ${{ steps.git_ops.outputs.CURRENT_BRANCH }}
         NEW_BRANCH: ${{ steps.git_ops.outputs.NEW_BRANCH }}
