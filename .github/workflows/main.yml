@@ -96,7 +96,7 @@ jobs:
             head: NEW_BRANCH,
             base: 'main'
           })
-          return pullRequest.data.html_url
+          echo "PR_URL=${pullRequest.data.html_url}" >> $GITHUB_OUTPUT
       env:
         CURRENT_BRANCH: ${{ steps.git_ops.outputs.CURRENT_BRANCH }}
         NEW_BRANCH: ${{ steps.git_ops.outputs.NEW_BRANCH }}
@@ -109,10 +109,10 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           🚀 Translation workflow completed successfully!
-          Repository: ${{ github.repository }}
-          Branch: ${{ github.ref }}
-          Commit: ${{ github.sha }}
-          Pull Request: ${{ steps.create_pr.outputs.result }}
+          **Repository**: ${{ github.repository }}
+          **Branch**: ${{ github.ref }}
+          **Commit**: ${{ github.sha }}
+          **Pull Request**: ${{ steps.create_pr.outputs.result }}
 
     - name: Send Telegram Failure Message
       if: failure()
@@ -122,7 +122,7 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           ❌ Translation workflow failed!
-          Repository: ${{ github.repository }}
-          Branch: ${{ github.ref }}
-          Commit: ${{ github.sha }}
+          **Repository**: ${{ github.repository }}
+          **Branch**: ${{ github.ref }}
+          **Commit**: ${{ github.sha }}
           Please check the logs for more information.
