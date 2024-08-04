@@ -96,7 +96,7 @@ jobs:
             head: NEW_BRANCH,
             base: 'main'
           })
-          echo $pullRequest
+          echo pullRequest
           echo "PR_URL=${pullRequest.data.html_url}" >> $GITHUB_OUTPUT
       env:
         CURRENT_BRANCH: ${{ steps.git_ops.outputs.CURRENT_BRANCH }}
