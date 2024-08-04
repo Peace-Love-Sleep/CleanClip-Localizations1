@@ -52,7 +52,12 @@ jobs:
         fi
 
     - name: Run translation script
-      run: python translation.py --prev=${{ steps.get_params.outputs.PARAM1 }} --target=${{ steps.get_params.outputs.PARAM2 }}
+      run: |
+        python translation.py --prev=${{ steps.get_params.outputs.PARAM1 }} --target=${{ steps.get_params.outputs.PARAM2 }}
+        # 获取当前分支名称
+        CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+        echo "CURRENT_BRANCH=${CURRENT_BRANCH}" >> $GITHUB_OUTPUT
+      id: run_script
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
@@ -64,3 +69,5 @@ jobs:
           - From: ${{ steps.get_params.outputs.PARAM1 }}
           - To: ${{ steps.get_params.outputs.PARAM2 }}
         branch: update-translations-${{ github.sha }}
+        base: ${{ steps.run_script.outputs.CURRENT_BRANCH }}  # 使用脚本切换后的分支作为基础分支
+        delete-branch: true
