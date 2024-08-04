@@ -1,0 +1,66 @@
+name: Run Translation Script
+
+on:
+  workflow_dispatch:
+    inputs:
+      commitash:
+        description: 'The commitash'
+        required: false
+        default: ''
+        type: string
+      prev_commitash:
+        description: 'The prev commitash'
+        required: false
+        default: ''
+        type: string
+
+  create:
+    tags:
+      - '*'
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # 获取所有标签和历史
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # 确保您有一个 requirements.txt 文件列出了所有依赖
+
+    - name: Get tags or commitash
+      id: get_params
+      run: |
+        if [[ "${{ github.event_name }}" == "create" ]]; then
+          CURRENT_TAG=${GITHUB_REF#refs/tags/}
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 ${CURRENT_TAG}^ 2>/dev/null || echo "")
+          echo "PARAM1=${PREVIOUS_TAG}" >> $GITHUB_OUTPUT
+          echo "PARAM2=${CURRENT_TAG}" >> $GITHUB_OUTPUT
+        else
+          COMMITASH=${{ github.event.inputs.commitash }}
+          PREVIOUS_COMMITASH=${{ github.event.inputs.prev_commitash }}
+          echo "PARAM1=${PREVIOUS_COMMITASH}" >> $GITHUB_OUTPUT
+          echo "PARAM2=${COMMITASH}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Run translation script
+      run: python translation.py --prev=${{ steps.get_params.outputs.PARAM1 }} --target=${{ steps.get_params.outputs.PARAM2 }}
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: Update translations
+        title: Update translations
+        body: |
+          This PR updates translations:
+          - From: ${{ steps.get_params.outputs.PARAM1 }}
+          - To: ${{ steps.get_params.outputs.PARAM2 }}
+        branch: update-translations-${{ github.sha }}
