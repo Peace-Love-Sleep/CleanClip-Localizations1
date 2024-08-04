@@ -100,6 +100,7 @@ jobs:
       env:
         CURRENT_BRANCH: ${{ steps.git_ops.outputs.CURRENT_BRANCH }}
         NEW_BRANCH: ${{ steps.git_ops.outputs.NEW_BRANCH }}
+      id: git_pr
     
     - name: Send Telegram Success Message
       if: success()
@@ -112,7 +113,9 @@ jobs:
           **Repository**: ${{ github.repository }}
           **Branch**: ${{ github.ref }}
           **Commit**: ${{ github.sha }}
-          **Pull Request**: ${{ steps.create_pr.outputs.result }}
+          **Pull Request**: ${{ env.PR_URL }}
+      env:
+        PR_URL: ${{ steps.git_pr.outputs.PR_URL }}
 
     - name: Send Telegram Failure Message
       if: failure()
