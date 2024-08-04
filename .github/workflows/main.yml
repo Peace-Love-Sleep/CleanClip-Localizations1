@@ -115,7 +115,7 @@ jobs:
           *Repository*: ${{ github.repository }}
           *Branch*: ${{ github.ref }}
           *Commit*: ${{ github.sha }}
-          *Pull Request*: ${{ env.PR_URL }} - ${{ github.event.head_commit.message }}
+          *Pull Request*: ${{ env.PR_URL }}
       env:
         PR_URL: ${{ steps.git_pr.outputs.PR_URL }}
 
