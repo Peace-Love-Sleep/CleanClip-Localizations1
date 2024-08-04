@@ -109,6 +109,7 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
+        format: 'markdown'
         message: |
           🚀 Translation workflow completed successfully!
           **Repository**: ${{ github.repository }}
@@ -124,6 +125,7 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
+        format: 'markdown'
         message: |
           ❌ Translation workflow failed!
           **Repository**: ${{ github.repository }}
