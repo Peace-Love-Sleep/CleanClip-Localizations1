@@ -93,7 +93,7 @@ jobs:
             repo: context.repo.repo,
             title: 'Update translations',
             body: 'This PR updates translations.',
-            head: 's1ntoneli/' + NEW_BRANCH,
+            head: 'Peace-Love-Sleep:' + NEW_BRANCH,
             base: CURRENT_BRANCH
           })
       env:
