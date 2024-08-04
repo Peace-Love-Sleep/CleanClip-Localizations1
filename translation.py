@@ -124,7 +124,7 @@ def main():
         base_strings_old = parse_strings_file(localizable_files[en_key])
 
     # Checkout the new commit
-    repo.git.checkout(new_commit_id, b='temp-localization-updates')
+    # repo.git.checkout(new_commit_id, b='temp-localization-updates')
 
     localizable_files = find_localizable_files(root_dir)
     # Find the English file (it could be 'en', 'en-US', 'en-GB', etc.)
