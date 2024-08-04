@@ -54,6 +54,11 @@ jobs:
     - name: Run translation script
       run: |
         python translation.py --prev=${{ steps.get_params.outputs.PARAM1 }} --target=${{ steps.get_params.outputs.PARAM2 }}
+
+        # 设置 Git 用户配置
+        git config --global user.name "GA TranslationBot"
+        git config --global user.email "translationbot@gokoding.com"
+
         # 获取当前分支名称
         CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
         
