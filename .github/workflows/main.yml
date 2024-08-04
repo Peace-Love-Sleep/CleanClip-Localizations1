@@ -53,7 +53,7 @@ jobs:
 
     - name: Run translation script
       run: |
-        # python translation.py --prev=${{ steps.get_params.outputs.PARAM1 }} --target=${{ steps.get_params.outputs.PARAM2 }}
+        python translation.py --prev=${{ steps.get_params.outputs.PARAM1 }} --target=${{ steps.get_params.outputs.PARAM2 }}
 
         # 设置 Git 用户配置
         git config --global user.name "GA TranslationBot"
@@ -93,7 +93,7 @@ jobs:
             repo: context.repo.repo,
             title: 'Update translations',
             body: 'This PR updates translations.',
-            head: 'Peace-Love-Sleep:' + NEW_BRANCH,
+            head: NEW_BRANCH,
             base: CURRENT_BRANCH
           })
       env:
