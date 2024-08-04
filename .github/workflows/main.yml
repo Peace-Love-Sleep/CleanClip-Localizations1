@@ -88,7 +88,7 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
           const { CURRENT_BRANCH, NEW_BRANCH } = process.env
-          await github.rest.pulls.create({
+          const pullRequest = await github.rest.pulls.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: 'Update translations',
@@ -96,6 +96,33 @@ jobs:
             head: NEW_BRANCH,
             base: 'main'
           })
+          return pullRequest.data.html_url
       env:
         CURRENT_BRANCH: ${{ steps.git_ops.outputs.CURRENT_BRANCH }}
         NEW_BRANCH: ${{ steps.git_ops.outputs.NEW_BRANCH }}
+    
+    - name: Send Telegram Success Message
+      if: success()
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          🚀 Translation workflow completed successfully!
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref }}
+          Commit: ${{ github.sha }}
+          Pull Request: ${{ steps.create_pr.outputs.result }}
+
+    - name: Send Telegram Failure Message
+      if: failure()
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          ❌ Translation workflow failed!
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref }}
+          Commit: ${{ github.sha }}
+          Please check the logs for more information.
