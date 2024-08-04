@@ -124,6 +124,7 @@
 
 // Migration
 "migration_data_upgrading" = "Mise à jour des données...";
+"migration_data_upgrading_claim" = "En fonction de votre volume de données, la mise à niveau peut prendre de quelques secondes à quelques minutes.";
 "migrate_upgrading" = "Mise à jour des données";
 "migrate_start" = "OK";
 "migrate_upgraded" = "Mise à jour des données réussie!";
@@ -284,6 +285,13 @@
 "pin_title_application_tooltip" = "Portée de l'application courante";
 "pin_title_pin_tooltip" = "Cliquez pour épingler ou suivre l'application au premier plan";
 "pin_title_scope_all" = "Tous";
+"pin_title_lists_favorite" = "Préféré";
+"pin_title_lists_image" = "Image";
+"pin_title_lists_file" = "Déposer";
+"pin_title_lists_link" = "Lien";
+"pin_title_lists_email" = "E-mail";
+"pin_title_lists_remote" = "Télécommande";
+"pin_title_lists_notes" = "À partir des notes";
 "pin_title_scope_tooltip" = "Spécifiez la portée du contenu de la recherche";
 "pin_title_search_tooltip" = "⌘F Afficher/Masquer rapidement la zone de recherche";
 
@@ -306,7 +314,7 @@
 // Pro
 "pro_unpaid_version" = "Reste %@ utilisations aujourd'hui";
 
-// quickmenu 设置项
+// quickmenu settings
 "quickmenu_option_show_shortcut" = "Toujours afficher les raccourcis";
 "quickmenu_option_show_when_hover" = "Afficher automatiquement au survol de la souris";
 "quickmenu_option" = "Options de la barre d'outils";
@@ -318,10 +326,10 @@
 "quickmenu_general_default_action_auto_paste" = "Coller automatiquement";
 "quickmenu_general_default_action_copy" = "Copier uniquement";
 "quickmenu_tip_prefences" = "Préférences";
-// 工具列表
+// Tool List
 "quickmenu_option_switch" = "Changer d'élément ⌘[0-9]";
 "quickmenu_option_search" = "Rechercher ⌘F";
-"quickmenu_option_switchTab" = "Changer de liste ⌘;";
+"quickmenu_option_switchTab" = "Changer de liste ⌘";
 "quickmenu_option_copy" = "Copier dans le presse-papiers ⌘C";
 "quickmenu_option_star" = "Favoriser ⌘S";
 "quickmenu_option_delete" = "Supprimer ⌘D";
@@ -332,14 +340,31 @@
 "preferences_ocr_primary_language" = "Langue principale";
 "preferences_ocr_revision" = "Révision";
 "preferences_ocr_reindex" = "Mettre à jour l'index";
+"quickmenu_preview_ocr_header" = "Texte dans l'image :";
 
 // MARK: - settings
-// General
+// MARK: settings name
+"settings_general" = "Général";
+"settings_shortcuts" = "Raccourcis";
+"settings_paste_format" = "Coller le format";
+"settings_lists" = "Listes";
+"settings_quick_menu" = "Menu rapide";
+"settings_main_window" = "Fenêtre principale";
+"settings_paste_stack" = "Coller la pile";
+"settings_ignore" = "Ignorer";
+"settings_ocr" = "ROC";
+"settings_about" = "À propos";
+"settings_appupdates" = "Mise à jour logicielle disponible";
+"settings_license" = "Licence";
+"upgrade_to_recommand_os_version" = "macOS 13.0+ est recommandé pour la meilleure expérience !";
+
+// MARK: General
 "check_update" = "Vérifier maintenant";
 "check_update_desc" = "Vérifier les mises à jour automatiquement";
 "sounds" = "Sons";
 "sounds_desc" = "Activer les effets sonores lorsqu'un nouvel élément est ajouté à l'historique et que l'élément précédent est sélectionné.";
 "launch_at_login" = "Lancer au démarrage";
+"shortcuts" = "touche de raccourci";
 
 // Menu Icon
 "show_menu_icon" = "Afficher les icônes du menu";
@@ -347,34 +372,81 @@
 
 "show_recently_desc" = "Afficher la copie récente à côté de l'icône du menu";
 
-// Quick Menu
+// MARK: Quick Menu
 "quick_menu_title" = "Menu Rapide :";
-"quick_menu_shortcut_desc" = "Raccourci pour ouvrir l'application.
-Par défaut: 「⌘ + ;」";
+"quick_menu_shortcut_desc" = "Raccourci pour ouvrir l'application.";
 
 "popup_at" = "Popup à :";
 "window_center" = "Centre de la fenêtre";
 "mouse_cursor" = "Curseur de la souris";
 "text_cursor" = "Curseur de texte";
 "screen_center" = "Centre de l'écran";
+"popup_at_fallback" = "En raison des limitations du système, la position de saisie ne peut pas être positionnée correctement dans certaines applications. Veuillez sélectionner une autre position.";
 
-// Main Window
+// MARK: Main Window
 "main_window_title" = "Fenêtre principale:";
 "main_window_shortcut_desc" = "Touche de raccourci pour ouvrir la fenêtre principale.";
+"main_window_auto_collapse" = "Réduire automatiquement";
+"main_window_full_mode" = "Pleine hauteur";
 
-// Paste Stack
+// MARK: Paste Stack
 "paste_stack_title" = "Coller la pile :";
 "paste_stack_desc" = "Touche de raccourci pour ouvrir la pile de colle. Par défaut: 「⌘ + '」";
 
 "split_copy" = "Fractionner la copie:";
 "split_copy_desc" = "Fractionner la copie divise plusieurs lignes de texte en éléments séparés à copier.";
 
-// MARK: - Storage
+"paste_stack_order" = "Ordre par défaut :";
+"paste_stack_order_stack" = "Ordre de pile";
+"paste_stack_order_queue" = "Ordre de file d'attente";
+"paste_stack_order_shuffle" = "Mélanger l'ordre";
+
+// MARK: Storage
 "number_of_copies" = "Nombre d'éléments à garder dans l'historique";
 
-// MARK: - Ignore
+// MARK: Ignore
+"ignore_apps" = "Applications ignorées";
 "app" = "Application";
 "ignore_or_not" = "Ignore";
 "bundle_id" = "Bundle Id";
 "select_all" = "Select All";
 "unselect_all" = "Unselect All";
+
+// MARK: About
+"acknowledgements" = "Remerciements";
+"visit_website" = "Visite Website";
+"contact_us" = "Contactez-nous";
+"copyright" = "©️Droits d'auteur";
+
+// MARK: settings lists
+"lists_desc" = "Mieux organiser votre contenu avec des listes de collections, des listes intelligentes";
+"lists_name" = "nom";
+"is_smartlist" = "liste intelligente";
+"count" = "quantité";
+"desc" = "Description de la liste intelligente";
+
+// MARK: settings shortcuts
+"name" = "Fonction";
+"shortcuts" = "touche de raccourci";
+"shortcuts_quick_menu" = "Changer de menu contextuel";
+"shortcuts_main_window" = "Changer la fenêtre principale";
+"shortcuts_paste_stack" = "Changer la file d'attente de collage";
+"shortcuts_split_copy" = "copie fractionnée";
+"shortcuts_split_copy_desc" = "Divisez automatiquement le texte sélectionné par ligne et copiez-le en plusieurs éléments";
+
+// MARK: settings output formats
+"output_format_desc" = "Format de sortie par défaut, le texte sera formaté dans le format spécifié et collé.";
+
+// MARK: settings ocr
+"ocr_desc" = "Effectuez automatiquement l'OCR sur les images copiées et vous pouvez utiliser du texte pour rechercher des images plus tard";
+
+// MARK: settings appUpdates
+"avaiable_updates" = "Mises à jour disponibles";
+"beta_updates" = "Mises à jour bêta";
+"install_now" = "Redémarrer et mettre à jour";
+"updates_more_info" = "Plus d'informations...";
+
+// MARK: settings license
+"upgrade_to_pro" = "Passer à Pro";
+"free_amount_today" = "Utilisez le quota gratuit aujourd'hui";
+"upgrade_to_pro_for_unlimited_access" = "Passez à Pro pour un accès illimité à toutes les fonctionnalités !";
