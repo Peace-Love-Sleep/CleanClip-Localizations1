@@ -12,7 +12,7 @@
 "accessibility_alert_comment" = "Χορηγήστε πρόσβαση σε αυτήν την εφαρμογή στις προτιμήσεις ασφάλειας & απορρήτου, που βρίσκονται στις Προτιμήσεις συστήματος.\n\nΚάντε κλικ στο κουμπί +, επιλέξτε CleanClip και κάντε εναλλαγή στο πλαίσιο ελέγχου δίπλα του.";
 "accessibility_alert_deny" = "Απόρριψη";
 "accessibility_alert_open" = "Ανοίξτε Τις Προτιμήσεις Συστήματος";
-"clear_alert_message" = "Είστε βέβαιοι ότι θέλετε να διαγράψετε όλες τις εγγραφές;";
+"clear_alert_message" = "Είστε βέβαιοι ότι θέλετε να διαγράψετε όλες τις εγγραφές";
 "clear_alert_comment" = "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια.";
 "clear_alert_cancel" = "Αργότερα";
 "clear_alert_confirm" = "Απαλοιφή όλων";
@@ -329,7 +329,7 @@
 // Tool List
 "quickmenu_option_switch" = "Εναλλαγή Αντικειμένου \"[0-9]";
 "quickmenu_option_search" = "Αναζήτηση ⌘F";
-"quickmenu_option_switchTab" = "Εναλλαγή Λίστας ⌘;";
+"quickmenu_option_switchTab" = "Εναλλαγή Λίστας ⌘";
 "quickmenu_option_copy" = "Αντιγραφή στο Πρόχειρο";
 "quickmenu_option_star" = "Σελιδοδείκτης ⌘S";
 "quickmenu_option_delete" = "Διαγραφή ⌘D";
@@ -343,12 +343,28 @@
 "quickmenu_preview_ocr_header" = "Κείμενο σε Eικόνα:";
 
 // MARK: - settings
-// General
+// MARK: settings name
+"settings_general" = "Γενικός";
+"settings_shortcuts" = "Συντομεύσεις";
+"settings_paste_format" = "Μορφή επικόλλησης";
+"settings_lists" = "Κονίστρα";
+"settings_quick_menu" = "Γρήγορο μενού";
+"settings_main_window" = "Κύριο Παράθυρο";
+"settings_paste_stack" = "Επικόλληση στοίβας";
+"settings_ignore" = "Αγνοώ";
+"settings_ocr" = "OCR";
+"settings_about" = "Σχετικά με";
+"settings_appupdates" = "Διαθέσιμη ενημέρωση λογισμικού";
+"settings_license" = "Αδεια";
+"upgrade_to_recommand_os_version" = "Το macOS 13.0+ συνιστάται για την καλύτερη εμπειρία!";
+
+// MARK: General
 "check_update" = "Έλεγχος τώρα";
 "check_update_desc" = "Αυτόματος έλεγχος για ενημερώσεις";
 "sounds" = "Ήχοι";
 "sounds_desc" = "Αναπαραγωγή εφέ ήχου όταν ένα νέο στοιχείο προστίθεται στο ιστορικό και το προηγούμενο στοιχείο είναι επιλεγμένο.";
 "launch_at_login" = "Άνοιγμα κατά την εκκίνηση";
+"shortcuts" = "πλήκτρο συντόμευσης";
 
 // Menu Icon
 "show_menu_icon" = "Εμφάνιση εικονιδίου μενού";
@@ -356,34 +372,81 @@
 
 "show_recently_desc" = "Εμφάνιση πρόσφατων αντιγράφων δίπλα στο εικονίδιο μενού";
 
-// Quick Menu
+// MARK: Quick Menu
 "quick_menu_title" = "Γρήγορο Μενού:";
-"quick_menu_shortcut_desc" = "Καθολικό κλειδί συντόμευσης για το άνοιγμα της εφαρμογής.
-Προεπιλογή: 「⌘ + ;」";
+"quick_menu_shortcut_desc" = "Καθολικό κλειδί συντόμευσης για το άνοιγμα της εφαρμογής.";
 
 "popup_at" = "Αναδυόμενο Παράθυρο:";
 "window_center" = "Κεντράρισμα παραθύρου";
 "mouse_cursor" = "Δείκτης Ποντικιού";
 "text_cursor" = "Κέρσορας Κειμένου";
 "screen_center" = "Κέντρο της οθόνης";
+"popup_at_fallback" = "Λόγω περιορισμών του συστήματος, η θέση εισόδου δεν μπορεί να τοποθετηθεί σωστά σε ορισμένες εφαρμογές. Επιλέξτε μια εναλλακτική θέση για αυτήν.";
 
-// Main Window
+// MARK: Main Window
 "main_window_title" = "Κεντρικό παράθυρο:";
 "main_window_shortcut_desc" = "Καθολικό πλήκτρο συντόμευσης για άνοιγμα του κύριου παραθύρου.";
+"main_window_auto_collapse" = "Αυτόματη σύμπτυξη";
+"main_window_full_mode" = "Πλήρες ύψος";
 
-// Paste Stack
+// MARK: Paste Stack
 "paste_stack_title" = "Επικόλληση Στοίβας:";
 "paste_stack_desc" = "Καθολικό κλειδί συντόμευσης για το άνοιγμα της εφαρμογής. Προεπιλογή: 「⌘ + '」";
 
 "split_copy" = "Διαχωρισμός Αντιγράφου:";
 "split_copy_desc" = "Ο διαχωρισμός αντιγράφου θα χωρίσει πολλαπλές γραμμές κειμένου σε ξεχωριστά στοιχεία για αντιγραφή.";
 
-// MARK: - Storage
+"paste_stack_order" = "Προεπιλεγμένη παραγγελία:";
+"paste_stack_order_stack" = "Παραγγελία στοίβας";
+"paste_stack_order_queue" = "Σειρά ουράς";
+"paste_stack_order_shuffle" = "Τυχαία σειρά";
+
+// MARK: Storage
 "number_of_copies" = "Αριθμός στοιχείων ιστορικού προς διατήρηση";
 
-// MARK: - Ignore
+// MARK: Ignore
+"ignore_apps" = "Παράβλεψη εφαρμογών";
 "app" = "Application";
 "ignore_or_not" = "Ignore";
 "bundle_id" = "Bundle Id";
 "select_all" = "Select All";
 "unselect_all" = "Unselect All";
+
+// MARK: About
+"acknowledgements" = "Ευχαριστίες";
+"visit_website" = "Επισκέψου την ιστοσελίδα";
+"contact_us" = "Επικοινωνήστε μαζί μας";
+"copyright" = "©️Πνευματικά δικαιώματα";
+
+// MARK: settings lists
+"lists_desc" = "Οργανώστε καλύτερα το περιεχόμενό σας με λίστες συλλογής, έξυπνες λίστες";
+"lists_name" = "όνομα";
+"is_smartlist" = "έξυπνη λίστα";
+"count" = "ποσότητα";
+"desc" = "Έξυπνη περιγραφή λίστας";
+
+// MARK: settings shortcuts
+"name" = "Λειτουργία";
+"shortcuts" = "πλήκτρο συντόμευσης";
+"shortcuts_quick_menu" = "Εναλλαγή μενού συντόμευσης";
+"shortcuts_main_window" = "Εναλλαγή του κύριου παραθύρου";
+"shortcuts_paste_stack" = "Εναλλαγή ουράς επικόλλησης";
+"shortcuts_split_copy" = "διαχωρισμένο αντίγραφο";
+"shortcuts_split_copy_desc" = "Διαχωρίστε αυτόματα το επιλεγμένο κείμενο ανά γραμμή και αντιγράψτε το σε πολλά στοιχεία";
+
+// MARK: settings output formats
+"output_format_desc" = "Προεπιλεγμένη μορφή εξόδου, το κείμενο θα μορφοποιηθεί στην καθορισμένη μορφή και θα επικολληθεί.";
+
+// MARK: settings ocr
+"ocr_desc" = "Εκτελέστε αυτόματα OCR σε αντιγραμμένες εικόνες και μπορείτε να χρησιμοποιήσετε κείμενο για να αναζητήσετε εικόνες αργότερα";
+
+// MARK: settings appUpdates
+"avaiable_updates" = "Διαθέσιμες ενημερώσεις";
+"beta_updates" = "Ενημερώσεις Beta";
+"install_now" = "Επανεκκίνηση και ενημέρωση";
+"updates_more_info" = "Περισσότερες πληροφορίες...";
+
+// MARK: settings license
+"upgrade_to_pro" = "Αναβάθμιση σε επαγγελματικό";
+"free_amount_today" = "Χρησιμοποιήστε το δωρεάν όριο σήμερα";
+"upgrade_to_pro_for_unlimited_access" = "Κάντε αναβάθμιση σε Pro για απεριόριστη πρόσβαση σε όλες τις λειτουργίες!";
