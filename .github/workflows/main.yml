@@ -94,7 +94,7 @@ jobs:
             title: 'Update translations',
             body: 'This PR updates translations.',
             head: NEW_BRANCH,
-            base: main
+            base: 'main'
           })
       env:
         CURRENT_BRANCH: ${{ steps.git_ops.outputs.CURRENT_BRANCH }}
